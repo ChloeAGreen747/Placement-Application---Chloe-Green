@@ -1,0 +1,31 @@
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Pokemon Generations</h1>
+      <p class="lead text-muted">Below is a description of each generation of the Pokemon games.</p>
+    </div>
+</section>
+  
+<div class="container">
+    <div class="row">
+    <!--  For each generation: -->
+    <div *ngFor="let game of pokemonGames" class="col-md-6">
+        <div class="card mb-4 box-shadow ">
+            <div class="card-body">
+                <!--  Displays the name of the generation -->
+                <h5 class="card-title text-capitalize">{{ game[0] }}</h5>
+                <!--  Displays the ID of the generation -->
+                <h6 class="card-subtitle mb-2 text-muted">ID: {{ game[1] }}</h6>
+                <hr>
+                <!--  Displays the main region travelled in the generation  -->
+                <h6 class="card-subtitle mb-2 text-muted">Main Region Travelled:</h6>
+                <p class="card-text text-capitalize">{{ game[2].name }}</p>
+                <!--  Displays the Pokemon introduced in the generation -->
+                <h6 class="card-subtitle mb-2 text-muted">New Pokemon:</h6>
+                <ul class="card-columns">
+                    <li *ngFor="let pokemon of game[3]" class="card-text"> {{ pokemon.name }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

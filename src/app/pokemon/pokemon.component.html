@@ -1,0 +1,46 @@
+<div class="jumbotron text-center">
+    <!--  Displays the Pokemon name -->
+    <h1 class="display-4 text-capitalize text-center">{{ specifiedPokemon.name }}</h1>
+    <hr class="my-4">
+    <p class="lead">
+        <!--  Displays basic information about the specified Pokemon -->
+        ID: {{ specifiedPokemon.id }} | Base Experience: {{ specifiedPokemon.base_experience }}    |    Height: {{ specifiedPokemon.height }}    |    Weight: {{ specifiedPokemon.weight }}
+    </p>
+</div>
+
+<div class="container">
+  <div class="row gy-5">
+    <div class="col-6 card mb-4 box-shadow">
+      <div class="card-body">
+        <h2 class="card-title">Abilities</h2>
+        <ul>
+          <!--  Displays a list of all the selected Pokemons abilities -->
+          <li *ngFor="let ability of specifiedPokemon['abilities']" class="card-text"> {{ ability.ability.name }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-6 card mb-4 box-shadow">
+      <div class="card-body">
+        <h2 class="card-title">Types</h2>
+        <ul>
+            <!--  Displays a list of all the selected Pokemons types -->
+            <li *ngFor="let type of specifiedPokemon['types']"> {{ type.type.name }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col card mb-4 box-shadow">
+      <div class="card-body">
+        <h2 class="card-title">Moves</h2>
+        <ul class="card-columns">
+            <!--  Displays a list of all the selected Pokemons moves -->
+            <li *ngFor="let move of specifiedPokemon['moves']"> {{ move.move.name }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>

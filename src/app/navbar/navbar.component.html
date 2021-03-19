@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Takes the user to the homepage -->
+    <a class="navbar-brand" href="">Pokemon</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <!-- Takes the user to the first page of the Pokemon directory -->
+          <a class="nav-link" [routerLink]="['/pokemon-directory']" [queryParams]="{page: 1}">Pokemon Directory<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <!-- Takes the user to the Pokemon generations directory -->
+          <a class="nav-link" routerLink="/generations">Pokemon Generations<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+</nav>

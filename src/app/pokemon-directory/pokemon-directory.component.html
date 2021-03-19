@@ -1,0 +1,23 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Pokemon Directory</h1>
+    <p class="lead text-muted">Click on any Pokemon to see more.</p>
+  </div>
+</section>
+
+<div class="container">
+    <div class="row">
+      <!-- For each Pokemon in the list, it displays its name and ID -->
+      <div *ngFor="let pokemon of allPokemon | paginate: config" class="col-md-4">
+        <div class="card mb-4 box-shadow ">
+          <div class="card-body">
+            <h5 class="card-title text-capitalize"><a [routerLink]="['/pokemon', pokemon.name]">{{ pokemon.name }}</a></h5>
+            <h6 class="card-subtitle mb-2 text-muted">ID: {{ pokemon.url.replace("https://pokeapi.co/api/v2/pokemon/", "").replace("/","") }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Displays the page links and calls the pageChange function if a button is pressed -->
+<pagination-controls (pageChange)="pageChange($event)" class="pagination justify-content-center"></pagination-controls>
